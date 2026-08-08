@@ -3,9 +3,9 @@
   --paper: #0D0F12;
   --paper-alt: #14171B;
   --card: #17191E;
-  --ink: #EDEEF0;
-  --ink-soft: #9DA2AA;
-  --ink-faint: #676C74;
+  --ink: #F5F6F7;
+  --ink-soft: #B9BEC6;
+  --ink-faint: #83878F;
   --line: #262A30;
   --accent: #6C9BEF;
   --accent-soft: rgba(108, 155, 239, 0.1);
@@ -146,6 +146,41 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   width: 100%;
 }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-photo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo-glow {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108,155,239,0.35), rgba(63,201,140,0.12) 60%, transparent 75%);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.hero-photo img {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 20px 60px rgba(0,0,0,0.5);
+}
+
 .eyebrow {
   font-size: 0.8rem;
   color: var(--accent);
@@ -161,10 +196,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   line-height: 1.02;
   letter-spacing: -0.03em;
   margin-bottom: 22px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #C9CDD4 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #FFFFFF;
 }
 
 .hero-role {
@@ -542,6 +574,10 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 860px) {
+  .hero-layout { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; margin-bottom: 8px; }
+  .hero-photo img { width: 200px; height: 200px; }
+  .hero-photo-glow { width: 240px; height: 240px; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: 1fr; }
