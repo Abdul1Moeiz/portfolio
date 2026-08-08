@@ -176,6 +176,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   width: 300px;
   height: 300px;
   object-fit: cover;
+  object-position: center;
   border-radius: 50%;
   border: 3px solid var(--line);
   box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 20px 60px rgba(0,0,0,0.5);
