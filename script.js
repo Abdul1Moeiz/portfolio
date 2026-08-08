@@ -1,5 +1,5 @@
 // ============ ROLE ROTATOR (typing effect) ============
-const roles = ["Software Engineer", "Web Developer", "UX-minded Builder", "IEEE Chapter President"];
+const roles = ["Software Engineer", "Web Developer", "UX-minded Builder"];
 const roleEl = document.getElementById("roleText");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
